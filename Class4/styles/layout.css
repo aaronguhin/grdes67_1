@@ -1,0 +1,11 @@
+main.container{
+    background-color: pink;
+
+}
+
+@media (min-width: 768px){
+    .image-title-prg{
+        height: 200px;
+        display: table-cell;
+    }
+}
