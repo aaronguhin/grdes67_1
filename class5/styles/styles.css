@@ -4,92 +4,136 @@
 /* Everything RE: layout and grid */
 @import url("layout.css");
 
+* {
+    border: 0;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
 
-.navbar {
-    background-color: #eaeaea;
- }
- 
- .navcontainer {
-    width: 85%;
-    margin: 0 auto;
- }
- /* Start Toggle */
- 
- .toggle {
-    width: 30px;
-    padding: 10px;
-    float: right;
-    background-color: #00BCD4;
-    border-radius: 10px;
-    margin: 6px;
-    cursor: pointer;
-    display: none;
- }
- 
- .toggle span {
-    width: 100%;
-    height: 4px;
-    background-color: #fff;
-    display: block;
-    margin-bottom: 3px;
- }
- /* End Toggle */
- /* Start Logo */
- 
- .navbar .navcontainer .logo {
-    width: 15%;
+  a {
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    text-decoration: none;
+  }
+
+
+  #navbar {
+    background: white;
+    color: rgb(13, 26, 38);
+    position: fixed;
+    top: 0;
+    height: 60px;
+    line-height: 60px;
+    width: 100vw;
+    z-index: 10;
+  }
+  
+  .nav-wrapper {
+    margin: auto;
+    text-align: center;
+    width: 70%;
+  } @media(max-width: 768px) {
+      .nav-wrapper {
+        width: 90%;
+      }
+    } @media(max-width: 638px) {
+        .nav-wrapper {
+          width: 100%;
+        }
+      } 
+  
+  
+  .logo {
+    position: left;
     float: left;
-    padding-top: 8px
- }
- 
- .navbar .navcontainer .logo h1 {
-    color: #00BCD4;
-    font-family: sans-serif;
- }
- /* End Logo */
- /* Start Links */
- 
- .navbar .navcontainer .links {
-    width: 85%;
-    float: left;
- }
- 
- .navbar .navcontainer .links ul {
-    float: right;
- }
- 
- .navbar .navcontainer .links ul li {
+    margin-left: 28px;
+    font-size: 1.5em;
+    height: 60px;
+  } @media(max-width: 768px) {
+      .logo {
+        margin-left: 5px; 
+      }
+    }
+  
+  #navbar ul {
     display: inline-block;
-    padding: 15px;
- }
- 
- .navbar .navcontainer .links ul li a {
-    color: #03A9F4;
-    font-size: 18px;
-    font-family: sans-serif;
- }
- /* End Links */
- /* Media Query */
- 
- @media(max-width:768px) {
-    .toggle {
-       display: block;
-    }
-    .links {
-       display: none;
-    }
-    .navbar .navcontainer .links ul li {
-       display: block;
-       text-align: center;
-       padding: 10px;
-    }
-    .navbar .navcontainer .links ul {
-       float: none;
-    }
-    .navbar .navcontainer .logo {
-       padding-top: 10px;
-    }
- }
+    float: right;
+    list-style: none;
+    /* margin-right: 14px; */
+    margin-top: -2px;
+    text-align: right;
+    transition: transform 0.5s ease-out;
+    -webkit-transition: transform 0.5s ease-out;
+  } @media(max-width: 640px) {
+      #navbar ul {
+        display: none;
+      }
+    } @media(orientation: landscape) {
+        #navbar ul {
+          display: inline-block;
+        }
+      }
+  
+  #navbar li {
+    display: inline-block;
+  }
+  
+  #navbar li a {
+    color: rgb(13, 26, 38);
+    display: block;
+    font-size: 0.7em;
+    height: 50px;
+    letter-spacing: 1px;
+    margin: 0 20px;
+    padding: 0 4px;
+    position: relative;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+  }
+  
+  #navbar li a:hover {
+    /* border-bottom: 1px solid rgb(28, 121, 184); */
+    color: rgb(28, 121, 184);
+    transition: all 1s ease;
+    -webkit-transition: all 1s ease;
+  }
+  
+  /* Animated Bottom Line */
+  #navbar li a:before, #navbar li a:after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 1px;
+    bottom: -1px;
+    background: rgb(13, 26, 38);
+  }
+  
+  #navbar li a:before {
+    left: 0;
+    transition: 0.5s;
+  }
+  
+  #navbar li a:after {
+    background: rgb(13, 26, 38);
+    right: 0;
+    /* transition: width 0.8s cubic-bezier(0.22, 0.61, 0.36, 1); */
+  }
+  
+  #navbar li a:hover:before {
+    background: rgb(13, 26, 38);
+    width: 100%;
+    transition: width 0.5s cubic-bezier((0.22, 0.61, 0.36, 1));
+  }
+  
+  #navbar li a:hover:after {
+    background: transparent;
+    width: 100%;
+    /* transition: 0s; */
+  }/
 
 /* Jumbotron Styles */
  .jumbotron {
