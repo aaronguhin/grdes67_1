@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <!-- 
+    /\  _  \/\  _`\     /\  _`\                  __                    
+    \ \ \L\ \ \ \L\_\   \ \ \/\ \     __    ____/\_\     __     ___    
+     \ \  __ \ \ \L_L    \ \ \ \ \  /'__`\ /',__\/\ \  /'_ `\ /' _ `\  
+      \ \ \/\ \ \ \/, \   \ \ \_\ \/\  __//\__, `\ \ \/\ \L\ \/\ \/\ \ 
+       \ \_\ \_\ \____/    \ \____/\ \____\/\____/\ \_\ \____ \ \_\ \_\
+        \/_/\/_/\/___/      \/___/  \/____/\/___/  \/_/\/___L\ \/_/\/_/
+                                                         /\____/       
+                                                         \_/__/        
+   -->
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="" />
+
+    <!-- JQuery CSS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+    <title>Bootstrap Form</title>
+    
+</head>
+<body>
+
+    <h1>Which car would you choose to race?</h1>
+
+    <form action="auto-select.php">
+        <fieldset>
+                <label for="make">Car Make:</label>
+
+                <div class="make">
+                        <input class="form-check-input" type="radio" name="make" id="ferrari" value="ferrari" checked>
+                        <label class="form-check-label" for="ferrari">
+                          Ferrari
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="make" id="lambo" value="lambo">
+                        <label class="form-check-label" for="lambo">
+                          Lamborghini
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="make" id="pagani" value="pagani">
+                        <label class="form-check-label" for="pagani">
+                          Pagani
+                        </label>
+                      </div>
+        </fieldset>
+
+        <fieldset>
+            <label for="model">Car Model:</label>
+            <select id="model" name="model">
+             
+            </select>
+        </fieldset>
+
+        <fieldset>
+               <input type="submit" value="Hit It!">
+            </fieldset>
+
+    </form>
+
+   <script>
+       $(document).ready( function(){
+           
+           var ferrariModels = ["488", "512", "599", "LaFarrari", "GTO"];
+           var lamborghiniModels = ["Huracan", "Aventador", "Sesto Elemento", "Veneno", "Diablo"];
+           var paganiModels = ["Zonda", "Zonda R", "Huayra", "Huayra BC", "Huayra BC Roadster"];
+
+           //New JS Test
+
+           $("input[type='radio'][name='make']").change(function(){
+    
+	            var selected = $("input[type='radio'][name='make']:checked").val();
+    
+                    if(selected == "ferrari") var htmlContent = '<option value="' + ferrariModels[i] + '">' + ferrariModels[i] + "</option>";
+                 
+
+   
+
+           };
+
+           $("#model").empty();
+           $('#model').append(htmlContent);
+        
+    });
+       
+       
+
+   </script>
+
+  </body>
+</html>

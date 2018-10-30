@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <!-- 
+    /\  _  \/\  _`\     /\  _`\                  __                    
+    \ \ \L\ \ \ \L\_\   \ \ \/\ \     __    ____/\_\     __     ___    
+     \ \  __ \ \ \L_L    \ \ \ \ \  /'__`\ /',__\/\ \  /'_ `\ /' _ `\  
+      \ \ \/\ \ \ \/, \   \ \ \_\ \/\  __//\__, `\ \ \/\ \L\ \/\ \/\ \ 
+       \ \_\ \_\ \____/    \ \____/\ \____\/\____/\ \_\ \____ \ \_\ \_\
+        \/_/\/_/\/___/      \/___/  \/____/\/___/  \/_/\/___L\ \/_/\/_/
+                                                         /\____/       
+                                                         \_/__/        
+   -->
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="" />
+
+    <!-- JQuery CSS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+    <title>Page Title</title>
+    
+</head>
+<body>
+
+    <h1>Select your dream car!</h1>
+
+    <form action="auto-select.php">
+        <fieldset>
+        <label for="make">Car Make:</label>
+            <select id="make" name="make">
+                <option value="audi">Audi</option>
+                <option value="bmw">BMW</option>
+                <option value="ferrari">Ferrari</option>
+                <option value="lamborghini">Lamborghini</option>
+            </select>
+        </fieldset>
+
+        <fieldset>
+            <label for="model">Car Model:</label>
+            <select id="model" name="model" disabled>
+             
+            </select>
+        </fieldset>
+
+        <fieldset>
+               <input type="submit" value="Hit It!">
+            </fieldset>
+
+    </form>
+
+   <script>
+       $(document).ready( function(){
+           
+           var audiModels = ["S2", "S3", "S4", "S5", "S7"];
+           var bmwModels = ["2-Series", "3-Series", "4-Series", "5-Series", "7-Series"];
+           var ferrariModels = ["488", "512", "599", "LaFarrari", "GTO"];
+           var lamborghiniModels = ["Huracan", "Aventador", "Sesto Elemento", "Veneno", "Diablo"];
+
+           var updateModel = function(){
+               console.log($('#make')selected;
+               
+                $('#model').removeAttr('disabled');
+                $('#model').html('');
+                
+
+               if(selected === 'bmw'){
+                   for(var i = 0; i < bmwModels.length; i++){
+                        console.log(bmwModels[i]);
+                        var htmlContent = '<option value="' + bmwModels[i] + '">' + bmwModels[i] + "</option>";
+                        // <option value="2-series">2-Series</option>
+
+                        $('#model').append(htmlContent);
+                   }
+
+               }
+
+               if(selected === 'audi'){
+                   for(var i = 0; i < audiModels.length; i++){
+                        console.log(audiModels[i]);
+                        var htmlContent = '<option value="' + audiModels[i] + '">' + audiModels[i] + "</option>";
+                        // <option value="2-series">2-Series</option>
+
+                        $('#model').append(htmlContent);
+                   }
+
+               }
+
+               if(selected === 'ferrari'){
+                   for(var i = 0; i < ferrariModels.length; i++){
+                        console.log(ferrariModels[i]);
+                        var htmlContent = '<option value="' + ferrariModels[i] + '">' + ferrariModels[i] + "</option>";
+                        // <option value="2-series">2-Series</option>
+
+                        $('#model').append(htmlContent);
+                   }
+
+               }
+
+               if($('#make').val() === 'lamborghini'){
+                   for(var i = 0; i < lamborghiniModels.length; i++){
+                        console.log(lamborghiniModels[i]);
+                        var htmlContent = '<option value="' + lamborghiniModels[i] + '">' + lamborghiniModels[i] + "</option>";
+                        // <option value="2-series">2-Series</option>
+
+                        $('#model').append(htmlContent);
+                   }
+
+               }
+           }
+           
+           $('#make').change( function(){
+               updateModel();
+           });
+       });
+
+   </script>
+
+  </body>
+</html>
