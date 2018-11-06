@@ -1,0 +1,17 @@
+h1{
+    text-align: center;
+    font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin-top: 2%;
+}
+
+.form-container{
+    width: 800px;
+    margin: 0 auto;
+    margin-top: 5%;
+}
+
+button:disabled, button:disabled:hover, button[aria-disabled="true"], button[aria-disabled="true"]:hover {
+    color: #bbb;
+    background-color: #eee;
+}
+
