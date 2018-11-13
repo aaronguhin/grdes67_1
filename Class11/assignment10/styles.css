@@ -1,0 +1,117 @@
+#container{
+    text-align: center;
+}
+
+#word-box{
+        border: 1px solid black;
+        width: 400px;
+        height: 100px;
+        -webkit-animation: mymove 5s infinite; /* Chrome, Safari, Opera */
+        animation: mymove 5s infinite;
+    }
+    
+    /* Chrome, Safari, Opera */
+    @-webkit-keyframes mymove {
+        50% {font-size: 60px;}
+        50% {border: 15px solid red;}
+        50% {border-top-left-radius: 150px;}
+        50% {border-bottom-left-radius: 150px;}
+        50% {border-top-right-radius: 150px;}
+        50% {border-bottom-right-radius: 150px;}
+        from {background-color: red;}
+    to {background-color: blue;}
+    }
+    
+    /* Standard syntax */
+    @keyframes mymove {
+        50% {font-size: 60px;}
+        50% {border: 15px solid  red;}
+        50% {border-top-left-radius: 150px;}
+        50% {border-bottom-left-radius: 150px;}
+        50% {border-top-right-radius: 150px;}
+        50% {border-bottom-right-radius: 150px;}
+        from {background-color: red;}
+    to {background-color: blue;}
+        from{color: black;}
+        to{color: white;}
+    }
+
+#wild-box{
+        border: 1px solid black;
+        width: 400px;
+        height: 200px;
+        align-content: center;
+        padding-top: 95px;
+        -webkit-animation: wildmove 5s infinite; /* Chrome, Safari, Opera */
+        animation: wildmove 5s infinite;
+    }
+    
+    /* Chrome, Safari, Opera */
+    @-webkit-keyframes wildmove {
+        50% {word-spacing: 50px;}
+        from {background-color: seagreen;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            color: white;
+        font-size: 10px;
+        transform: rotate(360deg);
+    }
+    to {background-color: palevioletred;
+        font-family: fantasy;
+        color: seagreen;
+        font-size: 54px;
+    }
+}
+    /* Standard syntax */
+    @keyframes wildmove {
+        50% {word-spacing: 50px;}
+        from {background-color: seagreen;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            color: white;
+        font-size: 10px;
+        position: absolute;
+    left: 100px;
+    top: 150px;
+    transform: rotate(360deg);
+    }
+    to {background-color: palevioletred;
+        font-family: fantasy;
+        color: seagreen;
+        font-size: 54px;
+        position: absolute;
+    left: 405px;
+    top: 500px; }
+    }
+    #myImg {
+        width: 200px;
+        height: 400px;
+        object-fit: cover;
+        object-position: 0% 0%;
+        -webkit-animation: myimgmove 5s infinite; /* Chrome, Safari, Opera */
+        animation: myimgmove 5s infinite;
+      }  
+      
+      /* Chrome, Safari, Opera */
+      @-webkit-keyframes myimgmove {
+        0% {
+          object-position: 0% 0%;
+        }
+        25% {
+          object-position: 20% 0%;
+        }
+        100% {
+          object-position: 100% 100%;
+        }
+      }
+      
+      /* Standard syntax */
+      @keyframes myimgmove {
+        0% {
+          object-position: 0% 0%;
+        }
+        25% {
+          object-position: 20% 0%;
+        }
+        100% {
+          object-position: 100% 100%;
+        }
+      }
