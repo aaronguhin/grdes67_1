@@ -41,7 +41,7 @@
             <li><a href="products.html">Shop</a></li>
             <li><a href="blog.html">Blog</a></li>
             <li><a href="about.html">About</a></li>
-            <li><a class="cart" href="checkout.html"><img src="img/shopping-cart.png" alt="cart">
+            <li><a class="cart" href="checkout.html"><img src="img/shopping-cart.png" alt="cart"><span id="itemCount"></span>
             </a></li>
        
           </ul>
@@ -84,9 +84,8 @@
               <form class="d-flex justify-content-left">
                 <!-- Default input -->
                 <input type="number" value="1" aria-label="Search" class="form-control" style="width: 100px">
-                <button class="btn btn-primary btn-md my-0 p waves-effect waves-light" type="submit">Add to cart
-                  <i class="fa fa-shopping-cart ml-1"></i>
-                </button>
+                <button class="add btn btn-primary btn-md my-0 p waves-effect waves-light" type="submit">Add to cart
+                  </button>
   
               </form>
   
@@ -303,6 +302,11 @@
               nav.style.transition = 'transform 0.2s ease-out';
           }
       });
+      var itemCount = 0;
+      $('.add').click(function (){
+  itemCount ++;
+  $('#itemCount').html(itemCount).css('display', 'block');
+}); 
 
 
       // Toggle Menu Icon ========================================

@@ -21,7 +21,7 @@
     <!-- My Stylesheets-->
     <link rel="stylesheet" href="css/styles.css">
 
-  <title>Intnts Skateboa</title>
+  <title>Checkout</title>
   <link rel="shortcut icon" type="image/png" href="img/"/>
   <link href="https://fonts.googleapis.com/css?family=Open+Sans|Rubik:700" rel="stylesheet">
 
@@ -341,7 +341,16 @@
                     nav.style.transition = 'transform 0.2s ease-out';
                 }
             });
-    
+            $('.add').click(function (){
+  itemCount ++;
+  $('#itemCount').html(itemCount).css('display', 'block');
+}); 
+
+$('.clear').click(function() {
+  itemCount = 0;
+  $('#itemCount').html('').css('display', 'none');
+  $('#cartItems').html('');
+}); 
     
             // Toggle Menu Icon ========================================
             let toggleIcon = document.querySelector('.menuIcon');
